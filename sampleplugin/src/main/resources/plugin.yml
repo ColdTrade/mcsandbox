@@ -1,0 +1,8 @@
+name: SamplePlugin
+main: sampleplugin.SamplePlugin
+version: 0.0.1
+api-version: 1.19
+commands:
+  samplecommand:
+    description: Sample command
+    usage: /samplecommand
