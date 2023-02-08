@@ -1,2 +1,2 @@
-# mcsandbox
-Sandbox for MC
+# Minecraft Sandbox
+Sandbox for MC Plugins
