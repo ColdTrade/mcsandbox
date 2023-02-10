@@ -12,3 +12,12 @@
 /usercache.json
 /version_history.json
 /whitelist.json
+/cache/
+/config/
+/libraries/
+/logs/
+/plugins/
+/versions/
+/world/
+/world_nether/
+/world_the_end/
