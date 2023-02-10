@@ -50,7 +50,7 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.2.2</version>
 				<configuration>
-					<outputDirectory>./paper/plugins</outputDirectory>
+					<outputDirectory>./server/plugins</outputDirectory>
 				</configuration>
 			</plugin>
 		</plugins>
