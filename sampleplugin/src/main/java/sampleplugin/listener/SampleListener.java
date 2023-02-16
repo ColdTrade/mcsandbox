@@ -7,6 +7,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.title.Title;
+import net.kyori.adventure.title.Title.Times;
+import net.kyori.adventure.util.Ticks;
 import sampleplugin.SamplePlugin;
 
 public class SampleListener implements Listener {
@@ -19,24 +22,24 @@ public class SampleListener implements Listener {
 
 	@EventHandler
 	public void playerItemConsumeEventHandler(PlayerItemConsumeEvent event) {
-		plugin.getServer().broadcast(
+		plugin.getServer().broadcast(MiniMessage.miniMessage()
+				.deserialize("Ingested food: <color:#00ff00><b>" + event.getItem().getType() + "</b></color>"));
 
-				MiniMessage.miniMessage()
-						.deserialize("Food Ingested: <color:#00ff00><b>" + event.getItem().getType() + "</b></color>")
+		Times times = Times.times(Ticks.duration(10), Ticks.duration(70), Ticks.duration(20));
+		Title title = Title.title(MiniMessage.miniMessage().deserialize("<b>YOUR Plugin</b>"), MiniMessage.miniMessage()
+				.deserialize("<b><light_purple><b><i>Yeah, Baby! CUSTOM!</i></b></light_purple></b>"), times);
+		event.getPlayer().showTitle(title);
 
-		);
-
-//		Times times = Times.times(Ticks.duration(10), Ticks.duration(70), Ticks.duration(20));
-//		Title title = Title.title(MiniMessage.miniMessage().deserialize("My custom Plugin"),
-//				MiniMessage.miniMessage().deserialize("<light_purple><b><i>Yeah, Baby! CUSTOM!</i></b></light_purple>"),
-//				times);
-//		event.getPlayer().showTitle(title);
-
-//		playMusic(event.getPlayer());
-
+		playMusic(event.getPlayer());
 	}
 
-	protected void playMusic(Player player) throws InterruptedException {
+//		event.getPlayer().setArrowsInBody(700);
+//		event.getPlayer().setGlowing(false);
+//		event.getPlayer().showElderGuardian();
+//		event.getPlayer().spawnParticle(Particle.DRIP_LAVA, event.getPlayer().getLocation(), 500, 2, 2, 2);
+//		event.getPlayer().spawnParticle(Particle.DRIP_WATER, event.getPlayer().getLocation(), 500, 2, 2, 2);
+
+	protected void playMusic(Player player) {
 		// value pitch value pitch value pitch
 		// 0.5 F# 1 F# 2 F#
 		// 0.53 G 1.059 G
@@ -54,13 +57,24 @@ public class SampleListener implements Listener {
 		Sound instrument = Sound.BLOCK_NOTE_BLOCK_PLING;
 		// Sound instrument = Sound.BLOCK_NOTE_BLOCK_HARP;
 		player.playSound(player.getLocation(), instrument, 1, 1.335f); // B
-		Thread.sleep(100);
+		int timeToSleep = 100;
+		sleepyTime(timeToSleep);
 		player.playSound(player.getLocation(), instrument, 1, 1.498f); // D#
-		Thread.sleep(100);
+		sleepyTime(timeToSleep);
 		player.playSound(player.getLocation(), instrument, 1, 2.0f); // F#
-		Thread.sleep(100);
+		sleepyTime(timeToSleep);
 		player.playSound(player.getLocation(), instrument, 1, 1.498f); // D#
-		Thread.sleep(50);
+		sleepyTime(50);
 		player.playSound(player.getLocation(), instrument, 1, 2.0f); // F#
+	}
+
+	private void sleepyTime(int timeToSleep) {
+		try {
+			Thread.sleep(timeToSleep);
+		} catch (InterruptedException e) {
+			// Nothing
+			plugin.getLogger().info("Error sleeping: " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
 }
