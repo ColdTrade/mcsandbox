@@ -6,21 +6,21 @@ import org.bukkit.plugin.java.JavaPlugin;
 import luckplugin.listener.LuckListener;
 
 public class LuckPlugin extends JavaPlugin {
-	private LuckListener sampleListener;
+	private LuckListener luckListener;
 
 	public LuckPlugin() {
-		sampleListener = new LuckListener(this);
+		luckListener = new LuckListener(this);
 	}
 
 	@Override
 	public void onEnable() {
 		getLogger().info("----------------");
-		getLogger().info(" Sample Plugin! ");
+		getLogger().info("  Lucky Plugin! ");
 		getLogger().info("----------------");
 
 		// Register the Event Listeners
 		PluginManager pluginManager = getServer().getPluginManager();
-		pluginManager.registerEvents(sampleListener, this);
+		pluginManager.registerEvents(luckListener, this);
 
 		// Register the Commands
 //		getCommand("luckcommand").setExecutor(new LuckCommand(this));
@@ -29,7 +29,7 @@ public class LuckPlugin extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		getLogger().info("-----------------------");
-		getLogger().info("Good Bye Sample Plugin!");
+		getLogger().info("Good Bye Lucky Plugin! ");
 		getLogger().info("-----------------------");
 	}
 

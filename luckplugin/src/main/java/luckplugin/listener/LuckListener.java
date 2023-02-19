@@ -13,19 +13,17 @@ public class LuckListener implements Listener {
 
 	private LuckPlugin plugin;
 
-	public LuckListener(LuckPlugin itemDisablePlugin) {
-		this.plugin = itemDisablePlugin;
+	public LuckListener(LuckPlugin luckPlugin) {
+		this.plugin = luckPlugin;
 		this.plugin.hashCode();
 	}
 
-	boolean executed = false;
-
 	@EventHandler
-	public void lootGenerate(LootGenerateEvent event) {
+	public void lootGenerateLuckier(LootGenerateEvent event) {
 		List<ItemStack> loot = event.getLoot();
 		for (ItemStack itemStack : loot) {
-			plugin.getLogger().info("itemStack " + itemStack + " " + itemStack.getType() + " " + itemStack.getAmount());
 			itemStack.setAmount(itemStack.getAmount() * 7);
+			plugin.getLogger().info("itemStack " + itemStack);
 		}
 	}
 
