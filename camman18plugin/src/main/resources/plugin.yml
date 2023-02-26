@@ -1,0 +1,5 @@
+name: Camman18Plugin
+main: camman18plugin.Camman18Plugin
+version: 0.0.1
+api-version: 1.19
+
