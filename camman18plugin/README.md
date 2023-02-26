@@ -1,11 +1,15 @@
-Faster Minecart Plugin
+# Faster Minecart Plugin
 
-Execute:
-server.bat for Windows
-server.sh for Unix
+## Configuration
+- Execute:
+```
+	server.bat for Windows
+	server.sh for Unix
+```
+- Open Minecraft
+- Add the server localhost
+- Connect and enjoy!
 
-Open Minecraft
-Add the server localhost
-Connect and enjoy!
-
-Name a minecart "camman18" with an anvil and try it out!
+## Play
+- Name a minecart "camman18" with an anvil 
+- Try your faster minecart!
