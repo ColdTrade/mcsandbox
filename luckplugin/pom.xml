@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>luck</groupId>
-	<artifactId>luckplugin</artifactId>
+	<groupId>playerhunt</groupId>
+	<artifactId>playerhuntplugin</artifactId>
 	<version>0.0.4-SNAPSHOT</version>
-	<name>luckplugin</name>
+	<name>playerhuntplugin</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

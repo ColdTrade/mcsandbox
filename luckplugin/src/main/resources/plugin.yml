@@ -1,5 +1,5 @@
-name: LuckPlugin
-main: luckplugin.LuckPlugin
+name: PlayerHuntPlugin
+main: playerhunt.PlayerHuntPlugin
 version: 0.0.1
 api-version: 1.19
 
